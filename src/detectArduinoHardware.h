@@ -314,6 +314,12 @@
 #define SERIAL_TYPE_AVR    2
 #define SERIAL_TYPE_USBCDC 3
 
+#define FORM_FACTOR_CLASSIC 0
+#define FORM_FACTOR_MEGA    1
+#define FORM_FACTOR_MKR     2
+#define FORM_FACTOR_NANO    3
+#define FORM_FACTOR_OTHER   4
+
 #define HARDWARE_SERIAL_TYPE	SERIAL_TYPE_NORMAL
 #define NO_NETWORK     0
 #define ETHERNET_W5XXX 1
@@ -321,6 +327,8 @@
 #define WIFI_NINA      3
 #define WIFI_WINC1500  4
 #define EMBEDED_NETWORK NO_NETWORK
+
+
 
 /* AVR系統 */
 
@@ -358,6 +366,7 @@
 #define SERIAL_RESET true
 #undef HARDWARE_SERIAL_TYPE
 #define HARDWARE_SERIAL_TYPE	SERIAL_TYPE_AVR
+#define FORM_FACTOR_TYPE FORM_FACTOR_CLASSIC
 #endif /* Arduino Yun */
 
 /*
@@ -396,6 +405,7 @@
 #define SPI_SS 10
 #define ONBOARD_LED 13
 #define SERIAL_RESET true
+#define FORM_FACTOR_TYPE FORM_FACTOR_CLASSIC
 #endif /* Arduino Uno */
 
 /*
@@ -434,6 +444,7 @@
 #define SPI_SS 10
 #define ONBOARD_LED 13
 #define SERIAL_RESET true
+#define FORM_FACTOR_TYPE FORM_FACTOR_CLASSIC
 #endif /* Arduino Duemilanove or Diecimila 328P */
 
 #if defined( ARDUINO_AVR_DUEMILANOVE ) && defined( __AVR_ATmega168__ )
@@ -455,6 +466,7 @@
 #define SPI_SS 10
 #define ONBOARD_LED 13
 #define SERIAL_RESET true
+#define FORM_FACTOR_TYPE FORM_FACTOR_CLASSIC
 #endif /* Arduino Duemilanove or Diecimila 168 */
 
 /*
@@ -491,6 +503,7 @@
 #define SPI_SS 10
 #define ONBOARD_LED 13
 #define SERIAL_RESET true
+#define FORM_FACTOR_TYPE FORM_FACTOR_NANO
 #endif /* Arduino Nano 328P */
 
 #if defined( ARDUINO_AVR_NANO ) && defined( __AVR_ATmega168__ )
@@ -512,6 +525,7 @@
 #define SPI_SS 10
 #define ONBOARD_LED 13
 #define SERIAL_RESET true
+#define FORM_FACTOR_TYPE FORM_FACTOR_NANO
 #endif /* Arduino Nano 168 */
 
 /*
@@ -550,6 +564,7 @@
 #define SPI_SS 53
 #define ONBOARD_LED 13
 #define SERIAL_RESET true
+#define FORM_FACTOR_TYPE FORM_FACTOR_MEGA
 #endif /* Arduino Mega 2560 */
 
 #if defined( ARDUINO_AVR_MEGA ) && defined( __AVR_ATmega1280__ )
@@ -571,6 +586,7 @@
 #define SPI_SS 53
 #define ONBOARD_LED 13
 #define SERIAL_RESET true
+#define FORM_FACTOR_TYPE FORM_FACTOR_MEGA
 #endif /* Arduino Mega */
 
 #if defined( ARDUINO_AVR_ADK ) && defined( __AVR_ATmega2560__ )
@@ -592,6 +608,7 @@
 #define SPI_SS 53
 #define ONBOARD_LED 13
 #define SERIAL_RESET true
+#define FORM_FACTOR_TYPE FORM_FACTOR_MEGA
 #endif /* Arduino Mega ADK */
 
 /*
@@ -628,6 +645,7 @@
 #define SERIAL_RESET false
 #undef HARDWARE_SERIAL_TYPE
 #define HARDWARE_SERIAL_TYPE	SERIAL_TYPE_AVR
+#define FORM_FACTOR_TYPE FORM_FACTOR_CLASSIC
 #endif /* Arduino Leonardo */
 
 #if defined( ARDUINO_AVR_LEONARDO_ETH ) && defined( __AVR_ATmega32U4__ )
@@ -649,6 +667,7 @@
 #define HARDWARE_SERIAL_TYPE	SERIAL_TYPE_AVR
 #undef  EMBEDED_NETWORK
 #define EMBEDED_NETWORK ETHERNET_W5XXX
+#define FORM_FACTOR_TYPE FORM_FACTOR_CLASSIC
 #endif /* Arduino Leonardo ETH */
 
 /*
@@ -819,6 +838,7 @@
 #define SERIAL_RESET true
 #undef  EMBEDED_NETWORK
 #define EMBEDED_NETWORK ETHERNET_W5XXX
+#define FORM_FACTOR_TYPE FORM_FACTOR_CLASSIC
 #endif /* Arduino Ethernet */
 
 /*
@@ -896,6 +916,7 @@
 #define ONBOARD_LED 13
 #define SERIAL_RESET true
 #define PERIPHERAL_RESET 7
+#define FORM_FACTOR_TYPE FORM_FACTOR_CLASSIC
 #endif /* Arduino BT 328P */
 
 #if defined( ARDUINO_AVR_BT ) && defined( __AVR_ATmega168__ )
@@ -918,6 +939,7 @@
 #define ONBOARD_LED 13
 #define SERIAL_RESET true
 #define PERIPHERAL_RESET 7
+#define FORM_FACTOR_TYPE FORM_FACTOR_CLASSIC
 #endif /* Arduino BT 168 */
 
 /* LilyPad Arduino USB */
@@ -1059,6 +1081,7 @@
 #undef  EMBEDED_NETWORK
 #define EMBEDED_NETWORK WIFI_NINA
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_CLASSIC
 #endif /* Arduino Uno WiFi */
 
 /*
@@ -1194,6 +1217,7 @@
 #define I2C_SCL 71
 #define ONBOARD_LED 13
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_MEGA
 #endif /* Arduino Due */
 
 /*  SAMD系統  */
@@ -1203,6 +1227,7 @@
 #define CPU_TYPE TYPE_SAMD21G18A
 #define HARDWARE_NAME "Arduino Zero"
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_CLASSIC
 #endif /* Arduino Zero */
 
 #if defined( ARDUINO_SAMD_MKR1000 ) && defined( __SAMD21G18A__ )
@@ -1215,6 +1240,7 @@
 #undef  EMBEDED_NETWORK
 #define EMBEDED_NETWORK WIFI_WINC1500
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_MKR
 #endif /* Arduino MKR1000 */
 
 #if defined( ARDUINO_SAMD_MKRZERO ) && defined( __SAMD21G18A__ )
@@ -1225,6 +1251,7 @@
 #undef HARDWARE_SERIAL_TYPE
 #define HARDWARE_SERIAL_TYPE	SERIAL_TYPE_MKR
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_MKR
 #endif /* Arduino MKRZero */
 
 #if defined( ARDUINO_SAMD_MKRWIFI1010 ) && defined( __SAMD21G18A__ )
@@ -1237,6 +1264,7 @@
 #undef  EMBEDED_NETWORK
 #define EMBEDED_NETWORK WIFI_NINA
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_MKR
 #endif /* Arduino MKR WiFi 1010 */
 
 #if defined( ARDUINO_SAMD_NANO_33_IOT ) && defined( __SAMD21G18A__ )
@@ -1249,6 +1277,7 @@
 #undef  EMBEDED_NETWORK
 #define EMBEDED_NETWORK WIFI_NINA
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_NANO
 #endif /* Arduino NANO 33 IoT */
 
 #if defined( ARDUINO_SAMD_MKRFox1200 ) && defined( __SAMD21G18A__ )
@@ -1259,6 +1288,7 @@
 #undef HARDWARE_SERIAL_TYPE
 #define HARDWARE_SERIAL_TYPE	SERIAL_TYPE_MKR
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_MKR
 #endif /* Arduino MKR FOX 1200 */
 
 #if defined( ARDUINO_SAMD_MKRWAN1300 ) && defined( __SAMD21G18A__ )
@@ -1269,6 +1299,7 @@
 #undef HARDWARE_SERIAL_TYPE
 #define HARDWARE_SERIAL_TYPE	SERIAL_TYPE_MKR
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_MKR
 #endif /* Arduino MKR WAN 1300 */
 
 #if defined( ARDUINO_SAMD_MKRWAN1310 ) && defined( __SAMD21G18A__ )
@@ -1279,6 +1310,7 @@
 #undef HARDWARE_SERIAL_TYPE
 #define HARDWARE_SERIAL_TYPE	SERIAL_TYPE_MKR
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_MKR
 #endif /* Arduino MKR WAN 1310 */
 
 #if defined( ARDUINO_SAMD_MKRGSM1400 ) && defined( __SAMD21G18A__ )
@@ -1289,6 +1321,7 @@
 #undef HARDWARE_SERIAL_TYPE
 #define HARDWARE_SERIAL_TYPE	SERIAL_TYPE_MKR
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_MKR
 #endif /* Arduino MKR GSM 1400 */
 
 #if defined( ARDUINO_SAMD_MKRNB1500 ) && defined( __SAMD21G18A__ )
@@ -1299,6 +1332,7 @@
 #undef HARDWARE_SERIAL_TYPE
 #define HARDWARE_SERIAL_TYPE	SERIAL_TYPE_MKR
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_MKR
 #endif /* Arduino MKR NB 1500 */
 
 #if defined( ARDUINO_SAMD_MKRVIDOR4000 ) && defined( __SAMD21G18A__ )
@@ -1311,6 +1345,7 @@
 #undef  EMBEDED_NETWORK
 #define EMBEDED_NETWORK WIFI_NINA
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_MKR
 #endif /* Arduino MKR Vidor 4000 */
 
 #if defined( ARDUINO_SAMD_CIRCUITPLAYGROUND_EXPRESS ) && defined( __SAMD21G18A__ )
@@ -1327,6 +1362,7 @@
 #define CPU_TYPE TYPE_SAMD21G18A
 #define HARDWARE_NAME "Arduino Tian"
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_CLASSIC
 #endif /* Arduino Tian */
 
 /*
@@ -1365,6 +1401,7 @@
 #define SPI_SS 10
 #define ONBOARD_LED 13
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_CLASSIC
 #endif /* Arduino M0 / M0 Pro */
 
 
@@ -2832,7 +2869,8 @@ Labplus mPython
 #define HARDWARE_SERIAL_TYPE	SERIAL_TYPE_USBCDC
 #undef  EMBEDED_NETWORK
 #define EMBEDED_NETWORK WIFI_NORMAL
-#endif /* Arduino Nano 328P */
+#define FORM_FACTOR_TYPE FORM_FACTOR_NANO
+#endif /* ARDUINO_NANO_ESP32 */
 
 /* Arduino Uno R4 Minima
  * 動作電圧(VDD)      : 5V
@@ -2868,7 +2906,8 @@ Labplus mPython
 #define SPI_SCK 13
 #define SPI_SS 10
 #define ONBOARD_LED 13
-#define SERIAL_RESET true
+#define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_CLASSIC
 #endif /* ARDUINO_UNOR4_MINIMA */
 
 /* Arduino Uno R4 WiFi */
@@ -2890,7 +2929,8 @@ Labplus mPython
 #define SPI_SCK 13
 #define SPI_SS 10
 #define ONBOARD_LED 13
-#define SERIAL_RESET true
+#define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_CLASSIC
 #endif /* ARDUINO_UNOR4_WIFI */
 
 /*
@@ -2925,6 +2965,7 @@ Labplus mPython
 #define CAN_RX 93
 #define CAN_TX 94
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_MEGA
 #endif
 #endif
 
@@ -2956,6 +2997,7 @@ Labplus mPython
 #define CAN_RX 93
 #define CAN_TX 94
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_MEGA
 #endif
 #endif
 
@@ -2979,6 +3021,7 @@ Labplus mPython
 //#define SPI_SCK 13
 #define ONBOARD_LED 13
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_NANO
 #endif
 #else
 #ifdef ARDUINO_NANO_RP2040_CONNECT
@@ -2999,6 +3042,7 @@ Labplus mPython
 #define SPI_SCK 13
 #define ONBOARD_LED 13
 #define SERIAL_RESET false
+#define FORM_FACTOR_TYPE FORM_FACTOR_NANO
 #endif
 #endif
 
@@ -3876,5 +3920,8 @@ Labplus mPython
 #define PERIPHERAL_RESET UNKNOWN_VAL
 #endif /* PERIPHERAL_RESET */
 
+#ifndef FORM_FACTOR_TYPE
+#define FORM_FACTOR_TYPE FORM_FACTOR_OTHER
+#endif /* FORM_FACTOR_TYPE */
 
 #endif /* __DETECT_ARDUINO_HARDWARE_H__ */
